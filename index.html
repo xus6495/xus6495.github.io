@@ -11,6 +11,11 @@ body, html {
   margin: 0;
   display: flex;
   flex-direction: column;
+}
+
+.container {
+  flex: 1;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -23,17 +28,25 @@ body, html {
   0% { color: red; } /* 初始颜色 */
   100% { color: blue; } /* 结束颜色 */
 }
+
+footer {
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
 </style>
 </head>
 <body>
-<header>
+<header class="container">
   <h1 class="special-effect">Someone who doesn't want to write code</h1>
 </header>
 
 <!-- 这里是你的网页主体内容 -->
 
 <footer>
-  <p>这是页脚内容</p>
+  <p>^-^</p>
 </footer>
 </body>
 </html>
