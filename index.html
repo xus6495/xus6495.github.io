@@ -40,6 +40,24 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
+.countdown {
+      font-size: 48px;
+      color: red;
+      animation: countdownAnimation 1s infinite alternate;
+    }
+
+    @keyframes countdownAnimation {
+      0% {
+        color: red;
+      }
+      50% {
+        color: blue;
+      }
+      100% {
+        color: red;
+      }
+    }
 </style>
 </head>
 <body>
@@ -48,9 +66,34 @@ footer {
 </header>
 
 <!-- 这里是你的网页主体内容 -->
-
+<section class="container">
+    <div id="countdown"></div>
+</section>
 <footer>
   <p>^-^</p>
 </footer>
+<script>
+    // JavaScript代码实现倒计时逻辑
+    const countdownElement = document.getElementById('countdown');
+
+    function countdown() {
+      const targetDate = new Date('2027-01-10');
+      const currentDate = new Date();
+      const timeDifference = targetDate - currentDate;
+
+      if (timeDifference > 0) {
+        const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+        countdownElement.innerHTML = `${days}天 ${hours}小时 ${minutes}分钟 ${seconds}秒`;
+      } else {
+        countdownElement.innerHTML = '倒计时结束';
+      }
+    }
+
+    setInterval(countdown, 1000);
+  </script>
 </body>
 </html>
