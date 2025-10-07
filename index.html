@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
@@ -62,7 +62,9 @@ footer {
 </head>
 <body>
 <header class="container">
-  <h1 class="special-effect">Someone who doesn't want to write code</h1>
+  <h1>
+  	Hey, Have a nice day!
+  </h1>
 </header>
 
 <!-- 这里是你的网页主体内容 -->
@@ -73,27 +75,6 @@ footer {
   <p>^-^</p>
 </footer>
 <script>
-    // JavaScript代码实现倒计时逻辑
-    const countdownElement = document.getElementById('countdown');
-
-    function countdown() {
-      const targetDate = new Date('2027-01-10');
-      const currentDate = new Date();
-      const timeDifference = targetDate - currentDate;
-
-      if (timeDifference > 0) {
-        const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-
-        countdownElement.innerHTML = `${days}天 ${hours}小时 ${minutes}分钟 ${seconds}秒`;
-      } else {
-        countdownElement.innerHTML = '倒计时结束';
-      }
-    }
-
-    setInterval(countdown, 1000);
-  </script>
+</script>
 </body>
 </html>
