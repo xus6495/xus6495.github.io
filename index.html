@@ -30,7 +30,7 @@ header.container{
 }
 
 .u-info{
-    padding: 40px 0 48px 0;
+    padding: 40px 0 20px 0;
     display: flex;
 
     .img-avatar{
@@ -69,24 +69,18 @@ header.container{
 .hey {
     display: flex;
     flex-direction: column;
-    font-size: 19px;
+    span {
+      font-size: 20px;
+    }
 }
 .divider{
   display: flex;
   flex-direction: column;
   background-color: rgba(181, 239, 242, 0.5);
   border: 1px solid transparent;
-  width: 100%;
+  width: 60%;
   height: 100px;
-}
-
-.special-effect {
-  animation: colorChange 3s infinite alternate; /* 定义动画效果 */
-}
-
-@keyframes colorChange {
-  0% { color: red; } /* 初始颜色 */
-  100% { color: blue; } /* 结束颜色 */
+  margin-top: 10px;
 }
 
 footer {
@@ -97,23 +91,6 @@ footer {
   width: 100%;
 }
 
-.countdown {
-  font-size: 48px;
-  color: red;
-  animation: countdownAnimation 1s infinite alternate;
-}
-
-@keyframes countdownAnimation {
-  0% {
-    color: red;
-  }
-  50% {
-    color: blue;
-  }
-  100% {
-    color: red;
-  }
-}
 </style>
 </head>
 <body>
@@ -127,9 +104,9 @@ footer {
     </div>
   </div>
   <div class="hey">
-      <h1>
+    <span>
   	👋 Hey, Have a nice day!
-  </h1>
+  </span>
   </div>
   <div class="divider"></div>
 </header>
