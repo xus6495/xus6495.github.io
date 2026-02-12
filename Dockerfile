@@ -1,5 +1,5 @@
 # 使用 Nginx 作为基础镜像
-FROM nginx:alpine
+FROM registry.cn-hangzhou.aliyuncs.com/veryou/nginx:alpine
 
 # 设置工作目录
 WORKDIR /usr/share/nginx/html
