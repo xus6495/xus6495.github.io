@@ -5,7 +5,7 @@ FROM registry.cn-hangzhou.aliyuncs.com/veryou/nginx:alpine
 WORKDIR /usr/share/nginx/html
 
 # 删除默认的 Nginx 页面
-# RUN rm -rf /usr/share/nginx/html/*
+RUN rm -rf /usr/share/nginx/html/*
 
 # 复制网站文件到容器中
 COPY . .
