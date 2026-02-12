@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>相册 - 为友</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80') center/cover;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 20px 0;
+}
+
+header h1 {
+  color: #fff;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.back-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.back-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+#gallery {
+  display: flex;
+  gap: 16px;
+  min-height: 400px;
+}
+
+/* Lightbox Styles */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox .close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.lightbox .prev,
+.lightbox .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox .prev:hover,
+.lightbox .next:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.lightbox .prev {
+  left: 20px;
+}
+
+.lightbox .next {
+  right: 20px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 28px;
+  }
+  
+  #gallery {
+    gap: 12px;
+  }
+  
+  .lightbox .prev,
+  .lightbox .next {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+  
+  .lightbox .prev {
+    left: 10px;
+  }
+  
+  .lightbox .next {
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 15px;
+  }
+  
+  header {
+    margin-bottom: 30px;
+  }
+  
+  #gallery {
+    gap: 10px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>📷 生活相册</h1>
+    <a href="index.html" class="back-btn">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+      </svg>
+      返回首页
+    </a>
+  </header>
+  
+  <div id="gallery">
+    <!-- 图片将通过 JavaScript 动态加载 -->
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <img src="" alt="">
+  <button class="prev">‹</button>
+  <button class="next">›</button>
+  <button class="close">×</button>
+</div>
+
+<script src="js/gallery.js"></script>
+
+</body>
+</html>

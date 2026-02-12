@@ -1,0 +1,20 @@
+[
+  {
+    "src": "images/gallery/photo1.jpg",
+    "desc": "示例图片 1 - 在这里添加图片描述",
+    "date": "2024-02-11",
+    "aspectRatio": 1.5
+  },
+  {
+    "src": "images/gallery/photo2.jpg",
+    "desc": "示例图片 2 - 在这里添加图片描述",
+    "date": "2024-02-10",
+    "aspectRatio": 0.75
+  },
+  {
+    "src": "images/gallery/photo3.jpg",
+    "desc": "示例图片 3 - 在这里添加图片描述",
+    "date": "2024-02-09",
+    "aspectRatio": 1.0
+  }
+]
