@@ -1,0 +1,7 @@
+[
+  {
+    "name": "供应链采购模版",
+    "path": "resources/supply_chain_templates.zip",
+    "desc": "top20物料定盘表.csv，供应商健康度快筛表.csv，滚动3个月需求跟踪表.csv"
+  }
+]
